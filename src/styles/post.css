@@ -164,6 +164,30 @@
   padding: 22px 20px;
   overflow-x: auto;
   margin: 0;
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: var(--c-primary) transparent;
+}
+
+/* Chromium / Safari */
+.post-body pre::-webkit-scrollbar {
+  height: 6px;
+}
+
+.post-body pre::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: var(--r-full);
+  margin: 0 12px;
+}
+
+.post-body pre::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--c-primary) 45%, transparent);
+  border-radius: var(--r-full);
+  transition: background 0.2s var(--ease-out);
+}
+
+.post-body pre::-webkit-scrollbar-thumb:hover {
+  background: var(--c-primary);
 }
 
 .post-body pre code {
