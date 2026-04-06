@@ -33,6 +33,9 @@
     <a href="#services" class="top-bar__link" title="服务">
       <span class="material-symbols-rounded" style="font-size:22px">cloud</span>
     </a>
+    <a href="#blog" class="top-bar__link" title="博客">
+      <span class="material-symbols-rounded" style="font-size:22px">article</span>
+    </a>
     <a href="https://github.com/ikun-1145141" target="_blank" rel="noopener"
        class="top-bar__link" title="GitHub" style="margin-left:4px">
       <span class="material-symbols-rounded" style="font-size:22px">code</span>
@@ -255,8 +258,36 @@
 
       <!-- Populated by src/ui/services.ts -->
       <div class="services-grid" id="services-grid"></div>
+
+      <div class="section__more reveal">
+        <a href="/services.html" class="btn btn--outlined">
+          <span class="material-symbols-rounded" style="font-size:18px">dns</span>
+          查看全部服务
+        </a>
+      </div>
     </section>
   </div>
+
+  <!-- ═══ Blog ═══════════════════════════════════════════════ -->
+  <section class="section" id="blog">
+    <div class="section__eyebrow reveal">Blog</div>
+    <h2 class="section__title reveal">
+      <span class="material-symbols-rounded section__title-icon">newsmode</span>
+      最新文章
+    </h2>
+    <p class="section__sub reveal">一些不一定有点用的东西，慢慢写。</p>
+
+    <div class="post-grid" id="blog-grid">
+      <!-- Populated by src/ui/blog.ts (max 3) from src/generated/posts-manifest.ts -->
+    </div>
+
+    <div class="section__more reveal">
+      <a href="/blog.html" class="btn btn--outlined">
+        <span class="material-symbols-rounded" style="font-size:18px">menu_book</span>
+        查看全部文章
+      </a>
+    </div>
+  </section>
 
   <!-- ═══ Footer ═══════════════════════════════════════════════════ -->
   <footer>

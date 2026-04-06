@@ -2,7 +2,7 @@ import { SERVICES, type Service } from '../config';
 
 // ── Template ──────────────────────────────────────────────────────
 
-function serviceCardHTML(s: Service): string {
+export function serviceCardHTML(s: Service): string {
   return /* html */`
     <a class="service-card reveal"
        href="${s.url}"
@@ -25,9 +25,9 @@ function serviceCardHTML(s: Service): string {
 
 // ── Public API ────────────────────────────────────────────────────
 
-/** Render all services from config into #services-grid. */
+/** Render first 3 services from config into #services-grid (homepage). */
 export function renderServices(): void {
   const container = document.getElementById('services-grid');
   if (!container) return;
-  container.innerHTML = SERVICES.map(serviceCardHTML).join('');
+  container.innerHTML = SERVICES.slice(0, 3).map(serviceCardHTML).join('');
 }

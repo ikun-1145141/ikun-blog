@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ikun两年半自建的全部公开服务" />
+  <title>自建服务 | ikun两年半</title>
+
+  <!-- Fonts (via ikun114 proxy) -->
+  <link rel="preconnect" href="https://fonts.ikun114.top" />
+  <link
+    href="https://fonts.ikun114.top/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.ikun114.top/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0"
+    rel="stylesheet"
+  />
+
+  <script type="module" src="/src/pages/list.ts"></script>
+</head>
+<body>
+
+  <!-- ═══ Top App Bar ═════════════════════════════════════════════ -->
+  <header class="top-bar" id="topBar">
+    <a href="/" class="top-bar__logo" style="text-decoration:none">
+      ikun<span>·</span>blog
+    </a>
+    <a href="/#blog" class="top-bar__link" title="博客">
+      <span class="material-symbols-rounded" style="font-size:22px">article</span>
+    </a>
+    <a href="/services.html" class="top-bar__link" title="服务" aria-current="page">
+      <span class="material-symbols-rounded" style="font-size:22px">dns</span>
+    </a>
+    <a href="https://github.com/ikun-1145141" target="_blank" rel="noopener"
+       class="top-bar__link" title="GitHub" style="margin-left:4px">
+      <span class="material-symbols-rounded" style="font-size:22px">code</span>
+    </a>
+  </header>
+
+  <!-- ═══ Page Header ═════════════════════════════════════════════ -->
+  <div class="list-page__header">
+    <div class="list-page__eyebrow">Services</div>
+    <h1 class="list-page__title">
+      <span class="material-symbols-rounded section__title-icon">dns</span>
+      全部服务
+    </h1>
+    <p class="list-page__sub">我搭建并维护的公开代理服务，免费开放使用。</p>
+  </div>
+
+  <!-- ═══ Content ══════════════════════════════════════════════════ -->
+  <div class="list-page__body">
+    <div class="services-grid" id="all-services-grid">
+      <!-- Populated by src/pages/list.ts -->
+    </div>
+  </div>
+
+  <!-- ═══ Footer ═══════════════════════════════════════════════════ -->
+  <footer>
+    <p class="footer__main">ikun两年半 · 个人博客</p>
+    <p class="footer__copy">
+      © 2026 ikun-1145141 · Powered by Cloudflare Pages · Material Design 3 Expressive
+    </p>
+  </footer>
+
+  <!-- ═══ FAB: scroll-to-top ═══════════════════════════════════════ -->
+  <button class="fab" id="fab" aria-label="回到顶部">
+    <span class="material-symbols-rounded">arrow_upward</span>
+  </button>
+
+</body>
+</html>

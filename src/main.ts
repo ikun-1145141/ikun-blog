@@ -6,6 +6,7 @@ import './styles/animations.css';
 
 import { renderProjects } from './ui/projects';
 import { renderServices } from './ui/services';
+import { renderBlog }     from './ui/blog';
 import { initScrollBehavior, initReveal } from './ui/scroll';
 import { initStats } from './ui/stats';
 
@@ -13,6 +14,7 @@ import { initStats } from './ui/stats';
 // are in the DOM before initReveal() observes them.
 renderProjects();
 renderServices();
+renderBlog();
 
 // Wire up scroll behaviour and reveal animations.
 initScrollBehavior();

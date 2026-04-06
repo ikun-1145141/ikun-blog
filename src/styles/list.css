@@ -1,0 +1,86 @@
+/* ─── List Page (blog.html / services.html) ─────────────────────── */
+
+.list-page__header {
+  padding: 80px 24px 48px;
+  text-align: center;
+  background: var(--c-scl);
+  border-bottom: 1px solid var(--c-outline-variant);
+}
+
+.list-page__eyebrow {
+  display: inline-block;
+  font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--c-on-primary-container);
+  background: var(--c-primary-container);
+  padding: 4px 14px;
+  border-radius: var(--r-full);
+  margin-bottom: 20px;
+}
+
+.list-page__title {
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 900; letter-spacing: -.5px; line-height: 1.2;
+  color: var(--c-on-surface);
+  margin: 0 auto 16px;
+  display: flex; align-items: center; justify-content: center;
+  gap: 10px;
+}
+
+.list-page__sub {
+  font-size: 16px; color: var(--c-on-surface-variant);
+  max-width: 480px; margin: 0 auto; line-height: 1.7;
+}
+
+.list-page__body {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 48px 24px 96px;
+}
+
+/* ─── Filter bar ─────────────────────────────────────────────────── */
+.filter-bar {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-bottom: 32px;
+}
+
+.filter-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 16px;
+  border-radius: var(--r-full);
+  font-size: 13px; font-weight: 500;
+  background: var(--c-sch);
+  color: var(--c-on-surface-variant);
+  border: 1.5px solid var(--c-outline-variant);
+  cursor: pointer;
+  transition: all 0.2s var(--spring);
+  font-family: inherit;
+  user-select: none;
+}
+
+.filter-btn:hover {
+  background: var(--c-primary-container);
+  color: var(--c-on-primary-container);
+  border-color: var(--c-primary);
+}
+
+.filter-btn--active {
+  background: var(--c-primary);
+  color: var(--c-on-primary);
+  border-color: var(--c-primary);
+}
+
+/* ─── Empty tip ──────────────────────────────────────────────────── */
+.list-empty {
+  flex-direction: column; align-items: center; gap: 12px;
+  padding: 64px 0;
+  color: var(--c-on-surface-variant);
+  font-size: 15px;
+}
+
+/* ─── Section more row ───────────────────────────────────────────── */
+.section__more {
+  margin-top: 0;
+  display: flex;
+  justify-content: center;
+}

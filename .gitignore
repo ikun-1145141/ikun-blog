@@ -7,6 +7,10 @@ dist/
 # Vite cache
 .vite/
 
+# Generated blog artifacts (rebuilt by `npm run build:blog`)
+posts/*.html
+public/blog/assets/
+
 # OS
 .DS_Store
 Thumbs.db
