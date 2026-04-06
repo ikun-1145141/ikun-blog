@@ -66,6 +66,12 @@
   -webkit-user-select: text;
 }
 
+/* Override global * { user-select: none } for all post content */
+.post-body * {
+  user-select: text;
+  -webkit-user-select: text;
+}
+
 .post-body h2 {
   font-size: 24px;
   font-weight: 800;
