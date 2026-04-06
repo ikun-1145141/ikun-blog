@@ -10,7 +10,7 @@ function serviceCardHTML(s: Service): string {
        rel="noopener noreferrer">
       <div class="service-card__shine"></div>
       <div class="service-card__body">
-        <span class="service-card__emoji">${s.emoji}</span>
+        <span class="service-card__icon material-symbols-rounded">${s.icon}</span>
         <div class="service-card__name">${s.name}</div>
         <div class="service-card__url">${s.url.replace('https://', '')}</div>
         <div class="service-card__desc">${s.desc}</div>

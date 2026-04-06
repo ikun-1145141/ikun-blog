@@ -302,7 +302,12 @@
 }
 .project-card:hover .project-card__shine { opacity: 0.55; }
 .project-card__body { position: relative; z-index: 1; flex: 1; }
-.project-card__emoji { font-size: 38px; margin-bottom: 18px; display: block; }
+.project-card__icon {
+  font-size: 48px;
+  margin-bottom: 18px;
+  display: block;
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+}
 .project-card__name {
   font-size: 19px; font-weight: 700;
   color: var(--c-on-surface); margin-bottom: 8px;
@@ -342,7 +347,12 @@
 }
 .service-card:hover .service-card__shine { opacity: 0.55; }
 .service-card__body { position: relative; z-index: 1; flex: 1; }
-.service-card__emoji { font-size: 38px; margin-bottom: 18px; display: block; }
+.service-card__icon {
+  font-size: 48px;
+  margin-bottom: 18px;
+  display: block;
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+}
 .service-card__name {
   font-size: 19px; font-weight: 700;
   color: var(--c-on-surface); margin-bottom: 6px;

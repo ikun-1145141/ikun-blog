@@ -4,7 +4,7 @@ import { PROJECTS, type Project } from '../config';
 
 function projectCardHTML(p: Project): string {
   const starsLine = p.stars !== undefined
-    ? `<div class="project-card__stars">⭐ ${p.stars} stars${p.forks ? ` · 🍴 ${p.forks} forks` : ''}</div>`
+    ? `<div class="project-card__stars"><span class="material-symbols-rounded" style="font-size:15px;vertical-align:-2px">star</span> ${p.stars}${p.forks ? ` &nbsp;<span class="material-symbols-rounded" style="font-size:15px;vertical-align:-2px">fork_right</span> ${p.forks}` : ''}</div>`
     : '';
 
   const tags = p.tags
@@ -18,7 +18,7 @@ function projectCardHTML(p: Project): string {
        rel="noopener noreferrer">
       <div class="project-card__shine"></div>
       <div class="project-card__body">
-        <span class="project-card__emoji">${p.emoji}</span>
+        <span class="project-card__icon material-symbols-rounded">${p.icon}</span>
         <div class="project-card__name">${p.name}</div>
         <div class="project-card__desc">${p.desc}</div>
         ${starsLine}
