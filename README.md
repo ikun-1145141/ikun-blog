@@ -14,7 +14,7 @@
 ikun-blog/
 ├── index.html           # Vite 入口（纯骨架，无内联样式/脚本）
 ├── blog/
-│   ├── docs/            # ✍️  在这里写博客（Markdown 文件）
+│   ├── docs/            # 在这里写博客（Markdown 文件）
 │   └── assets/          # 博客文章引用的图片等资源
 ├── scripts/
 │   └── build-blog.js    # MD → HTML 构建脚本（gray-matter + marked）
