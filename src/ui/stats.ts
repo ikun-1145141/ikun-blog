@@ -1,4 +1,4 @@
-import { fetchRepoStats, fetchRecentCommits } from '../api/github';
+import { fetchAllStats } from '../api/github';
 
 // ── Helpers ───────────────────────────────────────────────────────
 
@@ -33,14 +33,11 @@ export async function initStats(): Promise<void> {
   const elStars   = document.getElementById('stat-stars');
 
   try {
-    const [repoStats, commits] = await Promise.all([
-      fetchRepoStats(),
-      fetchRecentCommits(),
-    ]);
+    const { totalRepos, commits, totalStars } = await fetchAllStats();
 
-    if (elRepos)   countUp(elRepos,   repoStats.totalRepos);
+    if (elRepos)   countUp(elRepos,   totalRepos);
     if (elCommits) countUp(elCommits, commits);
-    if (elStars)   countUp(elStars,   repoStats.totalStars, ' ★');
+    if (elStars)   countUp(elStars,   totalStars, ' ★');
   } catch (err) {
     console.warn('[ikun-blog] GitHub stats fetch failed:', err);
     [elRepos, elCommits, elStars].forEach(setError);

@@ -10,16 +10,48 @@ interface PushEvent {
   payload?: { size?: number };
 }
 
-// ── Core fetch (via custom proxy) ─────────────────────────────────
+// ── Cache ─────────────────────────────────────────────────────────
+const CACHE_KEY = 'gh_stats_cache';
+const CACHE_TTL = 30 * 60 * 1000; // 30 minutes
+
+interface CacheEntry {
+  ts: number;
+  totalStars: number;
+  totalRepos: number;
+  commits: number;
+}
+
+function readCache(): CacheEntry | null {
+  try {
+    const raw = localStorage.getItem(CACHE_KEY);
+    if (!raw) return null;
+    const entry: CacheEntry = JSON.parse(raw);
+    if (Date.now() - entry.ts > CACHE_TTL) return null;
+    return entry;
+  } catch { return null; }
+}
+
+function writeCache(entry: Omit<CacheEntry, 'ts'>): void {
+  try {
+    localStorage.setItem(CACHE_KEY, JSON.stringify({ ...entry, ts: Date.now() }));
+  } catch { /* storage quota — ignore */ }
+}
+
+// ── Core fetch (direct → proxy fallback) ──────────────────────────
 async function ghFetch<T>(path: string): Promise<T> {
-  const url = `${GH_PROXY_BASE}${path}`;
-  const res  = await fetch(url, {
-    headers: { Accept: 'application/vnd.github+json' },
-  });
-  if (!res.ok) {
-    throw new Error(`GitHub proxy ${res.status}: ${url}`);
+  const directUrl = `https://api.github.com${path}`;
+  const proxyUrl  = `${GH_PROXY_BASE}${path}`;
+
+  for (const url of [directUrl, proxyUrl]) {
+    try {
+      const res = await fetch(url, {
+        headers: { Accept: 'application/vnd.github+json' },
+      });
+      if (res.ok) return res.json() as Promise<T>;
+    } catch { /* network error — try next */ }
   }
-  return res.json() as Promise<T>;
+
+  throw new Error(`GitHub fetch failed for ${path}`);
 }
 
 // ── Public API ────────────────────────────────────────────────────
@@ -67,3 +99,24 @@ export async function fetchRecentCommits(): Promise<number> {
 
   return total;
 }
+
+/** Fetch all stats — returns cached result if fresh, otherwise fetches & caches. */
+export async function fetchAllStats(): Promise<{
+  totalStars: number;
+  totalRepos: number;
+  commits: number;
+}> {
+  const cached = readCache();
+  if (cached) {
+    return { totalStars: cached.totalStars, totalRepos: cached.totalRepos, commits: cached.commits };
+  }
+
+  const [repoStats, commits] = await Promise.all([
+    fetchRepoStats(),
+    fetchRecentCommits(),
+  ]);
+
+  writeCache({ totalStars: repoStats.totalStars, totalRepos: repoStats.totalRepos, commits });
+  return { totalStars: repoStats.totalStars, totalRepos: repoStats.totalRepos, commits };
+}
+
