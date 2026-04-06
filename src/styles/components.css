@@ -263,7 +263,8 @@
   font-size: 14px; font-weight: 500;
   border: 1.5px solid var(--c-outline-variant);
   transition: all 0.25s var(--spring);
-  cursor: default;
+  cursor: pointer;
+  text-decoration: none;
 }
 .chip:hover {
   transform: scale(1.08) translateY(-3px);

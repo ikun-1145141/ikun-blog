@@ -33,7 +33,7 @@ export const SERVICES: Service[] = [
   {
     name:  'Gemini CLI 代理',
     url:   'https://cli.ikun114.top',
-    desc:  'Gemini CLI API 中转代理，配合 cli-balance-lite 使用，告别访问障碍。',
+    desc:  'Gemini CLI API 中转代理，告别访问障碍。',
     emoji: '☁️',
     tag:   'cli proxy',
     icon:  'terminal',
