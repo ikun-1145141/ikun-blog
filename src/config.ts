@@ -15,6 +15,14 @@ export interface Service {
 
 export const SERVICES: Service[] = [
   {
+    name:  'Google Fonts 代理',
+    url:   'https://fonts.ikun114.top',
+    desc:  'Google Fonts 及 Material Symbols 字体图标中转代理，本站字体图标即由此加速加载。',
+    emoji: '🔤',
+    tag:   'fonts proxy',
+    icon:  'text_fields',
+  },
+  {
     name:  'GitHub API 代理',
     url:   'https://github.ikun114.top',
     desc:  'GitHub REST API 中转代理，解决访问限制，无需额外 Token 提升速率。本站 Stats 数据即由此驱动。',
