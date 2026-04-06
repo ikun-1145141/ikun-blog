@@ -1,0 +1,62 @@
+/* ─── Section wrapper ───────────────────────────────────────────── */
+.section {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 88px 24px;
+}
+.section--alt { background: var(--c-scl); }
+
+.section__eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--c-primary);
+  background: var(--c-primary-container);
+  padding: 4px 12px;
+  border-radius: var(--r-full);
+  margin-bottom: 12px;
+}
+.section__title {
+  font-size: clamp(26px, 4vw, 36px);
+  font-weight: 800;
+  letter-spacing: -.5px;
+  color: var(--c-on-surface);
+  margin-bottom: 8px;
+}
+.section__sub {
+  font-size: 16px;
+  color: var(--c-on-surface-variant);
+  max-width: 480px;
+  margin-bottom: 48px;
+  line-height: 1.6;
+}
+
+/* ─── Grids ─────────────────────────────────────────────────────── */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 20px;
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* ─── Responsive overrides ─────────────────────────────────────── */
+@media (max-width: 640px) {
+  .section        { padding: 64px 20px; }
+  .stats-banner   { grid-template-columns: 1fr 1fr; }
+  .project-grid   { grid-template-columns: 1fr; }
+  .services-grid  { grid-template-columns: 1fr; }
+  .card-grid      { grid-template-columns: 1fr; }
+  .hero__bio      { font-size: 15px; }
+  .quote-block    { padding: 40px 28px; }
+}

@@ -1,0 +1,16 @@
+/* ─── Reset ─────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Sans SC', system-ui, sans-serif;
+  background: var(--c-bg);
+  color: var(--c-on-bg);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}

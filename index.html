@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ikun两年半的个人博客 —— 永远相信美好的事情即将发生 🏀" />
+  <title>ikun两年半 · 个人主页</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0"
+    rel="stylesheet"
+  />
+
+  <script type="module" src="/src/main.ts"></script>
+</head>
+<body>
+
+  <!-- ═══ Top App Bar ═════════════════════════════════════════════ -->
+  <header class="top-bar" id="topBar">
+    <div class="top-bar__logo">ikun<span>·</span>blog</div>
+    <a href="#about"    class="top-bar__link" title="关于我">
+      <span class="material-symbols-rounded" style="font-size:22px">person</span>
+    </a>
+    <a href="#projects" class="top-bar__link" title="项目">
+      <span class="material-symbols-rounded" style="font-size:22px">folder_open</span>
+    </a>
+    <a href="#services" class="top-bar__link" title="服务">
+      <span class="material-symbols-rounded" style="font-size:22px">cloud</span>
+    </a>
+    <a href="https://github.com/ikun-1145141" target="_blank" rel="noopener"
+       class="top-bar__link" title="GitHub" style="margin-left:4px">
+      <span class="material-symbols-rounded" style="font-size:22px">code</span>
+    </a>
+  </header>
+
+  <!-- ═══ Hero ════════════════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <div class="avatar-ring">
+      <img
+        src="https://avatars.githubusercontent.com/u/265925499?v=4"
+        alt="ikun两年半的头像"
+        loading="eager"
+        width="144" height="144"
+      />
+    </div>
+
+    <h1 class="hero__name">ikun两年半</h1>
+
+    <p class="hero__bio">
+      喵喵喵喵
+      <span class="sep">·</span>
+      ikun修炼中
+      <span class="sep">·</span>
+      代码搬运工
+    </p>
+
+    <div class="hero__actions">
+      <a href="#about" class="btn btn--filled">
+        <span class="material-symbols-rounded" style="font-size:18px">person</span>
+        关于我
+      </a>
+      <a href="#projects" class="btn btn--tonal">
+        <span class="material-symbols-rounded" style="font-size:18px">rocket_launch</span>
+        查看项目
+      </a>
+      <a href="https://github.com/ikun-1145141" target="_blank" rel="noopener"
+         class="btn btn--outlined">
+        <span class="material-symbols-rounded" style="font-size:18px">open_in_new</span>
+        GitHub
+      </a>
+    </div>
+
+    <div class="hero__scroll" aria-hidden="true">
+      <span class="material-symbols-rounded">expand_more</span>
+    </div>
+  </section>
+
+  <!-- ═══ Stats ═══════════════════════════════════════════════════ -->
+  <div style="background: var(--c-scl); padding: 0 24px;">
+    <div style="max-width:1120px; margin:0 auto; padding: 56px 0;">
+      <div class="stats-banner reveal">
+        <div>
+          <div class="stat__num">2.5<span style="font-size:28px">年</span></div>
+          <div class="stat__label">ikun 修炼年限</div>
+        </div>
+        <div>
+          <div class="stat__num loading" id="stat-repos">…</div>
+          <div class="stat__label">公开仓库数</div>
+        </div>
+        <div>
+          <div class="stat__num loading" id="stat-commits">…</div>
+          <div class="stat__label">近期提交数</div>
+        </div>
+        <div>
+          <div class="stat__num loading" id="stat-stars">…</div>
+          <div class="stat__label">仓库 Star 总数</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ About ════════════════════════════════════════════════════ -->
+  <section class="section" id="about">
+    <div class="section__eyebrow reveal">About</div>
+    <h2 class="section__title reveal">🐾 关于我</h2>
+    <p class="section__sub reveal">一只在代码海里游泳的小 ikun，喜欢用代码造有意思的东西。</p>
+
+    <div class="card-grid">
+      <div class="card reveal">
+        <span class="card__icon">🏀</span>
+        <h3 class="card__title">当然是 ikun 了</h3>
+        <div class="card__body">
+          ikun两年半，永远支持坤坤！🐔<br><br>
+          喜欢在代码里加各种「喵~」，<br>
+          是 <strong>MoFox Studio</strong> 生态的热情参与者，<br>
+          在二次元和代码宇宙中自由穿梭。
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <span class="card__icon">💻</span>
+        <h3 class="card__title">我在搞什么</h3>
+        <div class="card__body">
+          用 <strong>TypeScript / Python</strong> 造各种有意思的小玩意 ✨<br><br>
+          Live2D + LLM 爱好者，<br>
+          深信桌宠才是最佳编程助手 🌙<br><br>
+          探索 AI Agent 与桌面应用的奇妙融合。
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <span class="card__icon">🌱</span>
+        <h3 class="card__title">社区 &amp; 开源</h3>
+        <div class="card__body">
+          活跃于 <strong>MoFox Studio</strong> 开发者生态，<br>
+          参与构建面向未来的开发者工具。<br><br>
+          相信分享才能让代码更有意义，<br>
+          开源是最浪漫的事 🔌
+        </div>
+      </div>
+    </div>
+
+    <div class="quote-block reveal">
+      <div class="quote-block__mark">"</div>
+      <div class="quote-block__text">「永远相信美好的事情即将发生 🏀」</div>
+    </div>
+  </section>
+
+  <!-- ═══ Tech Stack ════════════════════════════════════════════════ -->
+  <div class="section--alt">
+    <section class="section" id="tech">
+      <div class="section__eyebrow reveal">Tech Stack</div>
+      <h2 class="section__title reveal">🛠️ 技术栈</h2>
+      <p class="section__sub reveal">我平时用来造东西的工具们。</p>
+
+      <div class="chip-group">
+        <div class="chip reveal">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="" />
+          TypeScript
+        </div>
+        <div class="chip reveal">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="" />
+          Python
+        </div>
+        <div class="chip reveal">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="" />
+          JavaScript
+        </div>
+        <div class="chip reveal">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg" alt="" />
+          Vue.js
+        </div>
+        <div class="chip reveal">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg" alt="" />
+          Vite
+        </div>
+        <div class="chip reveal">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/electron/electron-original.svg" alt="" />
+          Electron
+        </div>
+        <div class="chip reveal">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" alt="" />
+          FastAPI
+        </div>
+        <div class="chip reveal">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="" />
+          Node.js
+        </div>
+        <div class="chip reveal">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="" />
+          Git
+        </div>
+        <div class="chip reveal">
+          <span class="chip-em">🌩️</span>
+          Cloudflare Workers
+        </div>
+        <div class="chip reveal">
+          <span class="chip-em">🤖</span>
+          Live2D · LLM
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ═══ Projects ═════════════════════════════════════════════════ -->
+  <section class="section" id="projects">
+    <div class="section__eyebrow reveal">Projects</div>
+    <h2 class="section__title reveal">🚀 代表项目</h2>
+    <p class="section__sub reveal">我造的一些有意思的东西，欢迎来踩 🐾</p>
+
+    <!-- Populated by src/ui/projects.ts -->
+    <div class="project-grid" id="projects-grid"></div>
+
+    <div class="social-row reveal">
+      <a class="social-btn"
+         href="https://github.com/ikun-1145141"
+         target="_blank" rel="noopener">
+        <span class="material-symbols-rounded" style="font-size:18px">person</span>
+        GitHub Profile
+      </a>
+      <a class="social-btn"
+         href="https://github.com/MoFox-Studio"
+         target="_blank" rel="noopener">
+        <span class="material-symbols-rounded" style="font-size:18px">groups</span>
+        MoFox Studio
+      </a>
+      <a class="social-btn"
+         href="https://github.com/NekoMake"
+         target="_blank" rel="noopener">
+        <span class="material-symbols-rounded" style="font-size:18px">widgets</span>
+        NekoMake
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══ Services ════════════════════════════════════════════════ -->
+  <div class="section--alt">
+    <section class="section" id="services">
+      <div class="section__eyebrow reveal">Services</div>
+      <h2 class="section__title reveal">🌐 自建服务</h2>
+      <p class="section__sub reveal">我搭建并维护的公开代理服务，免费开放使用。</p>
+
+      <!-- Populated by src/ui/services.ts -->
+      <div class="services-grid" id="services-grid"></div>
+    </section>
+  </div>
+
+  <!-- ═══ Footer ═══════════════════════════════════════════════════ -->
+  <footer>
+    <p class="footer__main">ikun两年半 · 个人博客</p>
+    <p class="footer__quote">「永远相信美好的事情即将发生 🏀」</p>
+    <p class="footer__copy">
+      © 2026 ikun-1145141 · Powered by Cloudflare Pages ·
+      Material Design 3 Expressive
+    </p>
+  </footer>
+
+  <!-- ═══ FAB: scroll-to-top ═══════════════════════════════════════ -->
+  <button class="fab" id="fab" aria-label="回到顶部">
+    <span class="material-symbols-rounded">arrow_upward</span>
+  </button>
+
+</body>
+</html>

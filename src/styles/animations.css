@@ -1,0 +1,45 @@
+/* ─── Keyframes ─────────────────────────────────────────────────── */
+@keyframes bgshift {
+  from { opacity: 1; }
+  to   { opacity: 0.6; }
+}
+@keyframes float1 {
+  0%, 100% { transform: translate(0, 0)     scale(1);    }
+  50%      { transform: translate(-30px, 30px) scale(1.08); }
+}
+@keyframes float2 {
+  0%, 100% { transform: translate(0, 0)    scale(1);    }
+  50%      { transform: translate(20px, -20px) scale(0.92); }
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes pop-in {
+  from { transform: scale(0.4); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+@keyframes slide-up {
+  from { transform: translateY(32px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0);   }
+  50%      { transform: translateX(-50%) translateY(-8px); }
+}
+@keyframes shimmer {
+  0%   { background-position:  200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ─── Scroll Reveal ─────────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition:
+    opacity   0.65s var(--ease-out),
+    transform 0.65s var(--spring);
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}

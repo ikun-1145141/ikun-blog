@@ -1,0 +1,72 @@
+/* ─── M3 Expressive Design Tokens (Light) ──────────────────────── */
+:root {
+  --c-primary:               #6750A4;
+  --c-on-primary:            #FFFFFF;
+  --c-primary-container:     #EADDFF;
+  --c-on-primary-container:  #21005D;
+  --c-secondary:             #625B71;
+  --c-on-secondary:          #FFFFFF;
+  --c-secondary-container:   #E8DEF8;
+  --c-on-secondary-container:#1D192B;
+  --c-tertiary:              #7D5260;
+  --c-on-tertiary:           #FFFFFF;
+  --c-tertiary-container:    #FFD8E4;
+  --c-on-tertiary-container: #31111D;
+  --c-error:                 #B3261E;
+  --c-bg:                    #FFFBFE;
+  --c-on-bg:                 #1C1B1F;
+  --c-surface:               #FFFBFE;
+  --c-on-surface:            #1C1B1F;
+  --c-surface-variant:       #E7E0EC;
+  --c-on-surface-variant:    #49454F;
+  --c-outline:               #79747E;
+  --c-outline-variant:       #CAC4D0;
+  /* surface-container tones */
+  --c-scl:   #F7F2FA;
+  --c-sc:    #F3EDF7;
+  --c-sch:   #ECE6F0;
+  --c-scmax: #E6E0E9;
+
+  /* shape */
+  --r-xs:   4px;
+  --r-sm:   8px;
+  --r-md:   12px;
+  --r-lg:   16px;
+  --r-xl:   28px;
+  --r-full: 9999px;
+
+  /* motion */
+  --spring:   cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* ─── M3 Design Tokens (Dark) ───────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --c-primary:               #D0BCFF;
+    --c-on-primary:            #381E72;
+    --c-primary-container:     #4F378B;
+    --c-on-primary-container:  #EADDFF;
+    --c-secondary:             #CCC2DC;
+    --c-on-secondary:          #332D41;
+    --c-secondary-container:   #4A4458;
+    --c-on-secondary-container:#E8DEF8;
+    --c-tertiary:              #EFB8C8;
+    --c-on-tertiary:           #492532;
+    --c-tertiary-container:    #633B48;
+    --c-on-tertiary-container: #FFD8E4;
+    --c-error:                 #F2B8B5;
+    --c-bg:                    #141218;
+    --c-on-bg:                 #E6E1E5;
+    --c-surface:               #141218;
+    --c-on-surface:            #E6E1E5;
+    --c-surface-variant:       #49454F;
+    --c-on-surface-variant:    #CAC4D0;
+    --c-outline:               #938F99;
+    --c-outline-variant:       #49454F;
+    --c-scl:   #1D1B20;
+    --c-sc:    #211F26;
+    --c-sch:   #2B2930;
+    --c-scmax: #36343B;
+  }
+}
