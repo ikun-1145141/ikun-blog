@@ -5,11 +5,6 @@ interface Repo {
   stargazers_count: number;
 }
 
-interface PushEvent {
-  type: string;
-  payload?: { size?: number };
-}
-
 // ── Cache ─────────────────────────────────────────────────────────
 const CACHE_KEY = 'gh_stats_cache';
 const CACHE_TTL = 30 * 60 * 1000; // 30 minutes
@@ -80,24 +75,39 @@ export async function fetchRepoStats(): Promise<{
 }
 
 /**
- * Sum commits from recent public PushEvents (up to 3 pages ≈ last ~90 days).
- * Uses the public events endpoint — no auth required.
+ * Count commits authored by GH_USER across all public repos in the last 30 days.
+ * More reliable than the events API which only covers public events and caps at 300.
  */
 export async function fetchRecentCommits(): Promise<number> {
-  let total = 0;
+  const since = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString();
 
-  for (let page = 1; page <= 3; page++) {
-    const events = await ghFetch<PushEvent[]>(
-      `/users/${GH_USER}/events/public?per_page=100&page=${page}`,
+  // Reuse repos already fetched if possible; otherwise fetch page 1
+  let repos: { name: string }[] = [];
+  let page = 1;
+  while (true) {
+    const batch = await ghFetch<{ name: string }[]>(
+      `/users/${GH_USER}/repos?type=owner&per_page=100&page=${page}`,
     );
-    if (!Array.isArray(events) || events.length === 0) break;
-    events.forEach(e => {
-      if (e.type === 'PushEvent') total += e.payload?.size ?? 0;
-    });
-    if (events.length < 100) break;
+    if (!Array.isArray(batch) || batch.length === 0) break;
+    repos = repos.concat(batch);
+    if (batch.length < 100) break;
+    page++;
   }
 
-  return total;
+  // Fetch commit counts for all repos in parallel
+  const counts = await Promise.all(
+    repos.map(async repo => {
+      try {
+        // GitHub returns commits as array; we only need the count
+        const commits = await ghFetch<unknown[]>(
+          `/repos/${GH_USER}/${repo.name}/commits?author=${GH_USER}&since=${since}&per_page=100`,
+        );
+        return Array.isArray(commits) ? commits.length : 0;
+      } catch { return 0; }
+    }),
+  );
+
+  return counts.reduce((a, b) => a + b, 0);
 }
 
 /** Fetch all stats — returns cached result if fresh, otherwise fetches & caches. */
