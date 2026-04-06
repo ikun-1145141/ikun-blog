@@ -12,7 +12,7 @@ export const POSTS_MANIFEST: PostMeta[] = [
   {
     "slug": "github-proxy",
     "title": "GitHub 代理怎么用",
-    "date": "Tue Apr 07",
+    "date": "2026-04-07",
     "tags": [
       "教程",
       "GitHub",

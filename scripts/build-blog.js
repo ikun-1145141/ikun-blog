@@ -51,9 +51,12 @@ function processHtml(html) {
 // ── HTML page template ─────────────────────────────────────────────────────
 function buildPage(meta, bodyHtml) {
   const { title, date, tags = [], excerpt = '', readtime = 5 } = meta;
-  const dateStr  = new Date(date).toLocaleDateString('zh-CN', {
-    year: 'numeric', month: 'long', day: 'numeric',
-  });
+  const dateStr  = (() => {
+    const [y, m, d] = date.split('-').map(Number);
+    return new Date(y, m - 1, d).toLocaleDateString('zh-CN', {
+      year: 'numeric', month: 'long', day: 'numeric',
+    });
+  })();
   const tagsHtml = tags.map(t =>
     `<span class="post-meta__tag">${t}</span>`
   ).join('\n          ');
@@ -165,7 +168,9 @@ for (const file of files) {
   const meta = {
     slug,
     title:    String(data.title    ?? slug),
-    date:     String(data.date     ?? '').slice(0, 10) || '1970-01-01',
+    date:     (data.date instanceof Date
+                ? data.date.toISOString()
+                : String(data.date ?? '')).slice(0, 10) || '1970-01-01',
     tags:     Array.isArray(data.tags) ? data.tags.map(String) : [],
     excerpt:  String(data.excerpt  ?? ''),
     readtime: Number(data.readtime ?? 5),
